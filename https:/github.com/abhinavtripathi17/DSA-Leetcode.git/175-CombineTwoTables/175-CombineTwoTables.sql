@@ -1,0 +1,6 @@
+-- Last updated: 8/4/2026, 7:19:46 PM
+# Write your MySQL query statement below
+select p.firstName , p.lastName , a.city , a.state
+from person p 
+left join address a 
+on p.personId = a.personId
