@@ -1,0 +1,23 @@
+// Last updated: 8/4/2026, 7:09:13 PM
+class Solution {
+    int dp[][] = new int[1001][1001];
+    public int longestCommonSubsequence(String text1, String text2) {
+        int n = text1.length();
+        int m = text2.length();
+
+        for(int i = 1 ; i <= n ; i++){
+            for(int j = 1 ; j <= m ; j++){
+                if(text1.charAt(i-1) == text2.charAt(j-1)){
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                }
+                else{
+                    dp[i][j] = Math.max(dp[i-1][j] , dp[i][j-1]);
+                }
+            }
+        }
+
+        return dp[n][m];
+    }
+
+
+}
