@@ -1,0 +1,19 @@
+// Last updated: 8/4/2026, 12:42:30 PM
+class Solution {
+    public int maxDepth(String s) {
+        int count = 0 ; 
+        int maxi = 0 ;
+
+        for(int i = 0 ; i < s.length() ; i++){
+            if(s.charAt(i) == '('){
+                count++;
+                maxi = Math.max(maxi , count);
+            } 
+
+            if(s.charAt(i) == ')'){
+                count--;
+            }
+        }
+        return maxi;
+    }
+}
